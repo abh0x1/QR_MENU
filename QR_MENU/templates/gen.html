@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Generate QR Code</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+
+  <!-- Navigation Bar -->
+  <nav class="bg-white shadow-md py-4">
+    <div class="max-w-7xl mx-auto px-4">
+      <a href="#" class="text-xl font-bold text-gray-800 hover:text-blue-600 transition">QR Code Generator</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="flex-grow flex items-center justify-center px-4 py-10">
+    <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
+      <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Generate Your QR Code</h2>
+      
+      <form action="{% url 'generate_qr_code' %}" method="post" class="space-y-5">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <div class="text-center">
+          <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded transition">
+            Generate
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer (Optional) -->
+  <footer class="text-center text-gray-400 text-sm py-4">
+  &copy; 2025 QR Menu. All rights reserved ~ Abhi
+  </footer>
+
+</body>
+</html>

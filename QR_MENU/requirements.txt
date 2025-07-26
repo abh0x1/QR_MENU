@@ -1,0 +1,8 @@
+Django==5.2
+pillow==11.2.1
+qrcode==8.2
+pyzbar==0.1.9
+opencv-python==4.11.0.86
+django-crispy-forms==2.4
+crispy-tailwind==1.0.3
+django-ckeditor-5==0.2.18
